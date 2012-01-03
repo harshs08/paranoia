@@ -18,11 +18,11 @@ module Paranoia
   end
 
   def delete    
-#    self.update_attribute(:deleted_at, Time.now) if !deleted? && persisted?
-    if !deleted? && persisted?
-      self.deleted_at = Time.now
-      self.save(:validate => false)
-    end
+    self.update_all(:deleted_at, Time.now) if !deleted? && persisted?
+#    if !deleted? && persisted?
+#      self.deleted_at = Time.now
+#      self.save(:validate => false)
+#    end
     freeze
   end
   
