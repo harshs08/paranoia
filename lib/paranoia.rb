@@ -18,7 +18,10 @@ module Paranoia
   end
 
   def delete    
-    self.update_all(:deleted_at, Time.now) if !deleted? && persisted?
+    self.class.where(:id => self.id).update_all(:deleted_at => Time.now) if !deleted? && persisted?
+    self.reload
+    
+    puts 'third time'
 #    if !deleted? && persisted?
 #      self.deleted_at = Time.now
 #      self.save(:validate => false)
