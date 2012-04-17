@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rake", "0.8.7"
   
-  s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
+  s.files        = [".gitignore", "Gemfile", "Gemfile.lock", "README.md", "Rakefile", "lib/paranoia.rb", "lib/paranoia/version.rb", "paranoia.gemspec", "test/paranoia_test.rb"]
+  s.executables  = []
   s.require_path = 'lib'
 end
